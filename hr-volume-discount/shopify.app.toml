@@ -1,7 +1,7 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
 client_id = "92b51525508302090c6af5d2f6065d70"
-application_url = "https://example.com/"
+application_url = "https://crops-cities-marie-farming.trycloudflare.com"
 embedded = true
 name = "HR Volume discount"
 handle = "hr-volume-discount"
@@ -19,13 +19,18 @@ api_version = "2025-01"
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_products"
+scopes = "write_products, read_products, write_discounts"
 
 [auth]
-redirect_urls = [ "https://example.com/api/auth" ]
+redirect_urls = [
+  "https://crops-cities-marie-farming.trycloudflare.com/auth/callback",
+  "https://crops-cities-marie-farming.trycloudflare.com/auth/shopify/callback",
+  "https://crops-cities-marie-farming.trycloudflare.com/api/auth/callback"
+]
 
 [pos]
 embedded = false
 
 [build]
 dev_store_url = "hado-full-stack-store.myshopify.com"
+automatically_update_urls_on_dev = true
